@@ -1,0 +1,45 @@
+import { JSX } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import AppLayout from './ui/AppLayout.tsx'
+import Home from './ui/Home.tsx'
+import Login from './user/Login.tsx'
+import Register from './user/Register.tsx'
+import Guard from './services/Guard.tsx'
+import Dashboard from './user/Dashboard.tsx'
+import { guardLoader } from './services/loaders.ts'
+import { loginAction } from './services/actions.ts'
+
+function App(): JSX.Element {
+  const router = createBrowserRouter([
+    {
+      element: <AppLayout />,
+      children: [
+        {
+          element: (
+            <Guard>
+              <Dashboard />
+            </Guard>
+          ),
+          path: '/dashboard',
+          loader: guardLoader,
+        },
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: '/login',
+          element: <Login />,
+          action: loginAction,
+        },
+        {
+          path: '/register',
+          element: <Register />,
+        },
+      ],
+    },
+  ])
+  return <RouterProvider router={router} />
+}
+
+export default App
