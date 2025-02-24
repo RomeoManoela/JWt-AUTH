@@ -2,7 +2,7 @@ import { jwtDecode } from 'jwt-decode'
 import { refreshToken } from './apis.ts'
 
 export const guardLoader = async (): Promise<boolean> => {
-  const token: string | null = localStorage.getItem('token')
+  const token: string | null = localStorage.getItem('access')
   if (!token) return false
   const exp: number = jwtDecode(token).exp as number
   if (!exp) return false

@@ -1,13 +1,37 @@
 import { Form, Link } from 'react-router-dom'
 import { JSX } from 'react'
 
-function MyForm({ actionType }: { actionType: string }): JSX.Element {
+function MyForm({
+  actionType,
+  error,
+}: {
+  actionType: string
+  error: string | null
+}): JSX.Element {
   return (
-    <Form className={'mx-auto w-2/5 space-y-3 text-center'}>
+    <Form method={'POST'} className={'mx-auto w-2/5 space-y-3 text-center'}>
       <h1>{actionType}</h1>
-      <input className={'input'} type='text' name='username' placeholder='Username' />
+      {error && (
+        <>
+          <p className={'inline rounded bg-red-800 p-1 text-white'}>{error}</p>
+          <br />
+        </>
+      )}
+      <input
+        className={'input'}
+        type='text'
+        name='username'
+        placeholder='Username'
+        required
+      />
       <br />
-      <input className={'input'} type='password' name='password' placeholder='Password' />
+      <input
+        className={'input'}
+        type='password'
+        name='password'
+        placeholder='Password'
+        required
+      />
       <br />
       <button
         className={

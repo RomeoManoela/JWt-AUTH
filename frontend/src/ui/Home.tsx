@@ -1,7 +1,8 @@
-import { useNavigate } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom'
 
 function Home() {
   const navigate = useNavigate()
+  const isAUth = useLoaderData()
   return (
     <div className={'mt-2 space-y-10 text-center'}>
       <h1 className={'text-[2rem]'}>Hello World ! </h1>
@@ -15,24 +16,38 @@ function Home() {
         app
       </p>
       <div className={'mx-auto flex w-1/4 justify-between'}>
-        <button
-          onClick={() => navigate('/login')}
-          className={
-            'inline-block rounded bg-lime-800 px-2 py-1 text-sm' +
-            ' transition-all duration-150 hover:bg-lime-900'
-          }
-        >
-          Login
-        </button>
-        <button
-          onClick={() => navigate('/register')}
-          className={
-            'inline-block rounded bg-teal-800 px-2 py-1 text-sm ' +
-            'transition-all duration-150 hover:bg-teal-900'
-          }
-        >
-          Register
-        </button>
+        {isAUth ? (
+          <button
+            onClick={() => navigate('/dashboard')}
+            className={
+              'inline-block rounded bg-lime-800 px-2 py-1 text-sm' +
+              ' transition-all duration-150 hover:bg-lime-900'
+            }
+          >
+            Go to the dashboard
+          </button>
+        ) : (
+          <>
+            <button
+              onClick={() => navigate('/login')}
+              className={
+                'inline-block rounded bg-lime-800 px-2 py-1 text-sm' +
+                ' transition-all duration-150 hover:bg-lime-900'
+              }
+            >
+              Login
+            </button>
+            <button
+              onClick={() => navigate('/register')}
+              className={
+                'inline-block rounded bg-teal-800 px-2 py-1 text-sm ' +
+                'transition-all duration-150 hover:bg-teal-900'
+              }
+            >
+              Register
+            </button>
+          </>
+        )}
       </div>
     </div>
   )

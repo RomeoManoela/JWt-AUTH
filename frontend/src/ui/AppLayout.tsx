@@ -6,7 +6,6 @@ import Loader from './Loader.tsx'
 
 function AppLayout(): React.ReactNode {
   const navigation = useNavigation()
-  console.log(navigation.state)
   const isLoading: boolean =
     navigation.state === 'loading' || navigation.state === 'submitting'
   return (
