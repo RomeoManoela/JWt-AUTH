@@ -1,16 +1,17 @@
 # JWT Authentication Project
 
-This project demonstrates how to implement **JWT-based authentication** in a React and Django application.
+**JWT-based authentication** in a React and Django application.
 It includes functionality for **user registration**, **login**, and **logout**,
-using JSON Web Tokens (JWT) with HTTP-only cookie for the refresh token for secure communication between the frontend and backend.
+using JSON Web Tokens (JWT) with HTTP-only cookie for the refresh token for
+secure communication between the frontend and backend.
 
 ## Features
 
-- **User Registration**: Users can create an account with their username and password.
-- **User Login**: Users can log in to the application using their credentials.
-- **JWT Authentication**: Uses JWT tokens for authentication and authorization.
-- **Refresh Tokens**: Support for refreshing access tokens without requiring the user to log in again.
-- **Logout**: Users can log out and invalidate their session.
+- **User Registration**
+- **User Login**
+- **JWT Authentication**
+- **Refresh Tokens**
+- **Logout**
 
 ## Technologies Used
 
