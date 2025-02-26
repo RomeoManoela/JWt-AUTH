@@ -18,7 +18,6 @@ secure communication between the frontend and backend.
 - **Frontend**: 
   - React
   - Axios for API requests
-  - React Router for navigation
   - Tailwind CSS for styling
   - `react-router-dom` for routing
 
@@ -28,22 +27,23 @@ secure communication between the frontend and backend.
   - Simple JWT for token-based authentication
 
 ## Setup
+1. Clone the repository
+2. Install dependencies:
 
-### 1. Backend Setup (Django)
-
-1. Clone the repository for the backend (if it's separate) or navigate to your Django project.
-2. Install the required dependencies:
-
-cd backend:
+```bash
+cd backend
+```
 ```bash
 pip install -r requirements.txt
 ```
 ```bash
 python manage.py runserver 8001
-cd frontend:
 ```
 ```bash
-npm install
+cd ../frontend
+```
+```bash
+npm i
 ```
 ```bash
 npm run dev
