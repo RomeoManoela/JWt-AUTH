@@ -1,6 +1,8 @@
 # JWT Authentication Project
 
-This project demonstrates how to implement **JWT-based authentication** in a React and Django application. It includes functionality for **user registration**, **login**, and **logout**, using JSON Web Tokens (JWT) for secure communication between the frontend and backend.
+This project demonstrates how to implement **JWT-based authentication** in a React and Django application.
+It includes functionality for **user registration**, **login**, and **logout**,
+using JSON Web Tokens (JWT) with HTTP-only cookie for the refresh token for secure communication between the frontend and backend.
 
 ## Features
 
@@ -31,5 +33,17 @@ This project demonstrates how to implement **JWT-based authentication** in a Rea
 1. Clone the repository for the backend (if it's separate) or navigate to your Django project.
 2. Install the required dependencies:
 
+cd backend:
 ```bash
 pip install -r requirements.txt
+```
+```bash
+python manage.py runserver 8001
+cd frontend:
+```
+```bash
+npm install
+```
+```bash
+npm run dev
+```
